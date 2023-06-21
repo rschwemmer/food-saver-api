@@ -1,12 +1,24 @@
-import express, { Request, Response } from "express"
+import "dotenv/config"
+
+import cookies from "cookie-parser"
+import cors from "cors"
+import express from "express"
+
 const app = express()
 
-// setupMiddleware(app)
+app.use(express.json())
+app.use(cookies())
+app.use(
+  cors({
+    origin: ["http://localhost:3000"],
+    credentials: true,
+  })
+)
 
-// Routes
-app.get("/", (_req: Request, res: Response) => res.end(process.env.NODE_ENV))
-
-app.listen(process.env.PORT, () => {
-  console.info(`Server running on port http://localhost:${process.env.PORT}.`)
+app.get("/", (req, res) => {
+  res.status(200).json({ message: "API base url" })
 })
 
+app.listen(process.env.PORT, () =>
+    console.info(`Server running on port http://localhost:${process.env.PORT}.`)
+)
