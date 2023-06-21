@@ -20,5 +20,5 @@ app.get("/", (req, res) => {
 })
 
 app.listen(process.env.PORT, () =>
-  console.info("Server is running on port 5000")
+    console.info(`Server running on port http://localhost:${process.env.PORT}.`)
 )
