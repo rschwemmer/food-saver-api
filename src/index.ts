@@ -3,6 +3,7 @@ import "dotenv/config"
 import cookies from "cookie-parser"
 import cors from "cors"
 import express from "express"
+import { db } from "./db/db"
 
 const app = express()
 
@@ -20,5 +21,5 @@ app.get("/", (req, res) => {
 })
 
 app.listen(process.env.PORT, () =>
-    console.info(`Server running on port http://localhost:${process.env.PORT}.`)
+  console.info(`Server running on port http://localhost:${process.env.PORT}.`)
 )
