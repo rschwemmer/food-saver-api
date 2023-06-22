@@ -7,6 +7,7 @@
     "build": "tsup src/index.ts --format cjs",
     "test": "echo --connectionString=$(cat .env.development | grep DATABASE_URL | awk -F '=' '{print $NF}' | tr -d '\"')",
     "start": "env-cmd -f .env tsup src/index.ts --watch --format cjs --onSuccess 'node dist/index.js'",
+    "drizzle:generate": "drizzle-kit generate:mysql",
     "drizzle:push": "drizzle-kit push:mysql --driver mysql2 --schema src/db/schema/ --connectionString=$(cat .env.development | grep DATABASE_URL | awk -F '=' '{print $NF}' | tr -d '\"')"
   },
   "keywords": [],
