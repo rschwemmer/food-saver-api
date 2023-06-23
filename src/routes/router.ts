@@ -3,6 +3,6 @@ import edamamRouter from "./edamam/router"
 
 const appRouter: Router = express.Router()
 
-appRouter.use("/", edamamRouter)
+appRouter.use("/edamam", edamamRouter)
 
 export default appRouter
