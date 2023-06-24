@@ -1,4 +1,5 @@
 import { mysqlTable, serial, varchar, timestamp } from "drizzle-orm/mysql-core"
+import { InferModel } from "drizzle-orm"
 
 export const users = mysqlTable("users", {
   id: serial("id").primaryKey().autoincrement(),
@@ -10,3 +11,5 @@ export const users = mysqlTable("users", {
   created: timestamp("created", { fsp: 2 }).notNull().defaultNow(),
   updated: timestamp("updated").notNull().onUpdateNow(),
 })
+
+export type NewUser = InferModel<typeof users, "insert">

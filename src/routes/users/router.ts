@@ -1,5 +1,7 @@
 import express, { Router } from "express"
+import { processRequest } from "zod-express-middleware"
 
+import { createUserSchema } from "./schemas"
 import create from "./create"
 
 const userRouter: Router = express.Router()
@@ -9,7 +11,7 @@ const userRouter: Router = express.Router()
 // PUT
 
 // POST
-userRouter.post("/", create)
+userRouter.post("/", processRequest(createUserSchema), create)
 
 // DELETE
 
