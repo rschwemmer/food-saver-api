@@ -43,6 +43,13 @@
       "when": 1687630902411,
       "tag": "0006_mighty_norman_osborn",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "5",
+      "when": 1687633404595,
+      "tag": "0007_clumsy_santa_claus",
+      "breakpoints": true
     }
   ]
 }

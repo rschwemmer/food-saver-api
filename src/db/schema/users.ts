@@ -9,7 +9,7 @@ export const users = mysqlTable("users", {
   email: varchar("email", { length: 256 }),
   clerkId: varchar("clerk_id", { length: 256 }),
   created: timestamp("created", { fsp: 2 }).notNull().defaultNow(),
-  updated: timestamp("updated").notNull().onUpdateNow(),
+  updated: timestamp("updated").notNull().onUpdateNow().defaultNow(),
 })
 
 export type NewUser = InferModel<typeof users, "insert">
