@@ -50,6 +50,13 @@
       "when": 1687633404595,
       "tag": "0007_clumsy_santa_claus",
       "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "5",
+      "when": 1687634638960,
+      "tag": "0008_striped_piledriver",
+      "breakpoints": true
     }
   ]
 }

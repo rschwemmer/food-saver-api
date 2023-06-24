@@ -1,15 +1,16 @@
 import express, { Router } from "express"
-import listUserIngredients from "./listUserIngredients"
+import listPantry from "./listUserPantry"
+import createMOFOPantry from "./createUserIngredients"
 
 const ingredientRouter: Router = express.Router()
 
 // GET
-ingredientRouter.get("/:user_id", listUserIngredients)
+ingredientRouter.get("/:user_id", listPantry)
 
 // PUT
 
 // POST
-ingredientRouter.post("/")
+ingredientRouter.post("/", createMOFOPantry)
 
 // DELETE
 

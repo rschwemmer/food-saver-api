@@ -11,5 +11,5 @@ export const ingredients = mysqlTable("ingredients", {
   name: varchar("name", { length: 256 }),
   price: float("price"),
   created: timestamp("created", { fsp: 2 }).notNull().defaultNow(),
-  updated: timestamp("updated").notNull().onUpdateNow(),
+  updated: timestamp("updated").notNull().onUpdateNow().defaultNow(),
 })

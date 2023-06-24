@@ -1,15 +1,15 @@
 import { Request, Response } from "express"
 import { db } from "@/db/db"
 import { eq } from "drizzle-orm"
-import { userIngredients } from "@/db/schema/userIngredients"
+import { pantry } from "@/db/schema/pantry"
 
-const listUserIngredients = async (req: Request, res: Response) => {
+const listPantry = async (req: Request, res: Response) => {
   try {
     const { user_id } = req.params
     const ingredientsList = await db
       .select()
-      .from(userIngredients)
-      .where(eq(userIngredients.userId, Number(user_id)))
+      .from(pantry)
+      .where(eq(pantry.userId, Number(user_id)))
 
     return res
       .status(200)
@@ -19,4 +19,4 @@ const listUserIngredients = async (req: Request, res: Response) => {
   }
 }
 
-export default listUserIngredients
+export default listPantry
