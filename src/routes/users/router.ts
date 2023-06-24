@@ -1,13 +1,15 @@
 import express, { Router } from "express"
 
+import create from "./create"
+
 const userRouter: Router = express.Router()
 
 // GET
-// ingredientRouter.get("/ingredient/:ingredient_id", )
 
 // PUT
 
 // POST
+userRouter.post("/", create)
 
 // DELETE
 

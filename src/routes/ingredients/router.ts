@@ -1,13 +1,15 @@
 import express, { Router } from "express"
+import listUserIngredients from "./listUserIngredients"
 
 const ingredientRouter: Router = express.Router()
 
 // GET
-// ingredientRouter.get("/ingredient/:ingredient_id", )
+ingredientRouter.get("/:user_id", listUserIngredients)
 
 // PUT
 
 // POST
+ingredientRouter.post("/")
 
 // DELETE
 

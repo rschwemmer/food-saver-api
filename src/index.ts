@@ -3,7 +3,7 @@ import "dotenv/config"
 import cookies from "cookie-parser"
 import cors from "cors"
 import express from "express"
-import { db } from "./db/db"
+
 import appRouter from "./routes/router"
 
 const app = express()

@@ -22,6 +22,27 @@
       "when": 1687623125847,
       "tag": "0002_powerful_thing",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1687629079980,
+      "tag": "0004_workable_joshua_kane",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1687629650469,
+      "tag": "0005_fat_nebula",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1687630902411,
+      "tag": "0006_mighty_norman_osborn",
+      "breakpoints": true
     }
   ]
 }
