@@ -1,6 +1,6 @@
 import express, { Router } from "express"
 
-const userRouter: Router = express.Router()
+const ingredientRouter: Router = express.Router()
 
 // GET
 // ingredientRouter.get("/ingredient/:ingredient_id", )
@@ -11,4 +11,4 @@ const userRouter: Router = express.Router()
 
 // DELETE
 
-export default userRouter
+export default ingredientRouter
