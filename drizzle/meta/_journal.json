@@ -64,6 +64,13 @@
       "when": 1687638972090,
       "tag": "0009_striped_epoch",
       "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "5",
+      "when": 1687820919484,
+      "tag": "0010_sparkling_meltdown",
+      "breakpoints": true
     }
   ]
 }

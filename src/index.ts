@@ -7,6 +7,8 @@ import express from "express"
 import appRouter from "./routes/router"
 import { createClerkClient } from "@clerk/clerk-sdk-node"
 
+import setupMiddleware from "./middleware/setupMiddleware"
+
 const app = express()
 
 app.use(express.json())
@@ -19,6 +21,8 @@ app.use(
 )
 const clerk = createClerkClient({ apiKey: process.env.CLERK_API_KEY })
 app.use(clerk.expressWithAuth({}))
+
+setupMiddleware(app)
 
 app.get("/", (req, res) => {
   res.status(200).json({ message: "API base url" })

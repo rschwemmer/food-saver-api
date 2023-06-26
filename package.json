@@ -4,13 +4,14 @@
   "description": "yo mama",
   "main": "src/index.ts",
   "scripts": {
-    "build": "tsup src/index.ts --format cjs",
+    "build": "tsup ./src/index.ts --format cjs",
     "test": "echo --connectionString=$(cat .env.development | grep DATABASE_URL | awk -F '=' '{print $NF}' | tr -d '\"')",
     "start": "env-cmd -f .env.development tsup src/index.ts --watch --format cjs --onSuccess 'node dist/index.js'",
     "drizzle:generate": "drizzle-kit generate:mysql",
-    "drizzle:push": "drizzle-kit push:mysql --driver mysql2 --schema src/db/schema/ --connectionString=$(cat .env.development | grep DATABASE_URL | awk -F '=' '{print $NF}' | tr -d '\"')",
+    "drizzle:push": "drizzle-kit push:mysql --driver mysql2 --schema src/db/schema/ --connectionString=mysql://root:775622rs-@localhost:3306/freshr",
     "drizzle:drop": "drizzle-kit drop",
-    "drizzle:check": "drizzle-kit check:mysql"
+    "drizzle:check": "drizzle-kit check:mysql",
+    "seed": "ts-node ./src/seeds/createSeeds.ts"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +28,7 @@
     "libphonenumber-js": "^1.10.36",
     "lodash": "^4.17.21",
     "node": "^20.2.0",
+    "openai": "^3.3.0",
     "zod": "^3.21.4",
     "zod-express-middleware": "^1.4.0"
   },
