@@ -1,6 +1,6 @@
-// declare module "express" {
-//   export interface Response {
-//     // todo: change
-//     locals: Object
-//   }
-// }
+import { LooseAuthProp } from "@clerk/clerk-sdk-node"
+declare global {
+  namespace Express {
+    interface Request extends LooseAuthProp {}
+  }
+}

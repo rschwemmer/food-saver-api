@@ -5,6 +5,7 @@ import cors from "cors"
 import express from "express"
 
 import appRouter from "./routes/router"
+import { createClerkClient } from "@clerk/clerk-sdk-node"
 
 const app = express()
 
@@ -16,6 +17,8 @@ app.use(
     credentials: true,
   })
 )
+const clerk = createClerkClient({ apiKey: process.env.CLERK_API_KEY })
+app.use(clerk.expressWithAuth({}))
 
 app.get("/", (req, res) => {
   res.status(200).json({ message: "API base url" })
