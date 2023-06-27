@@ -1,5 +1,7 @@
 import categoriesData from "./categories"
+import foodSubcategories from "./subcategories"
 import { categories } from "../db/schema/foodCategories"
+import { subCategories } from "../db/schema/foodSubCategories"
 import { drizzle } from "drizzle-orm/mysql2"
 import mysql from "mysql2/promise"
 
@@ -17,6 +19,7 @@ async function seedDatabase(): Promise<void> {
     const db = drizzle(poolConnection)
 
     await db.insert(categories).values(categoriesData)
+    await db.insert(subCategories).values(foodSubcategories)
 
     console.log("Database seeding completed successfully.")
   } catch (error) {
