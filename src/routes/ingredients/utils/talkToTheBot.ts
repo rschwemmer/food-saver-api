@@ -7,7 +7,7 @@ import { ingredients, NewIngredient } from "@/db/schema/ingredients"
 
 const talkToTheBot = async (req: Request, res: Response) => {
   try {
-    const input = "Green Bell Pepper"
+    const { input } = req.body
 
     const categoryList = await db.select().from(categories)
     const subCategoryList = await db.select().from(subCategories)
@@ -17,7 +17,7 @@ const talkToTheBot = async (req: Request, res: Response) => {
       messages: [
         {
           role: "assistant",
-          content: `Categorize the following food item: ${input} using the category list: ${categoryList.toString()} and sub category list: ${subCategoryList.toString()} format it into a json response with the keys name, categoryId, categoryName, subcategoryId, subcategoryName.`,
+          content: `Categorize the following food item: ${input} using the category list: ${categoryList.toString()} and sub category list: ${subCategoryList.toString()} format it into a json response with the keys named, categoryId, categoryName, subcategoryId, subcategoryName.`,
         },
       ],
     })

@@ -1,9 +1,5 @@
 lockfileVersion: '6.0'
 
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
-
 dependencies:
   '@clerk/clerk-sdk-node':
     specifier: ^4.10.12
@@ -41,6 +37,9 @@ dependencies:
   node:
     specifier: ^20.2.0
     version: 20.2.0
+  node-tesseract-ocr:
+    specifier: ^2.2.1
+    version: 2.2.1
   openai:
     specifier: ^3.3.0
     version: 3.3.0
@@ -2185,6 +2184,11 @@ packages:
     resolution: {integrity: sha512-VzW+TAk2wE4X9maiKMlT+GsPU4OMmR1U9CrHSmd3DFLn2IcZ9VJ6M6BBugGfYUnPCLSYxXdZy17M0BEJyhUTwg==}
     dev: false
 
+  /node-tesseract-ocr@2.2.1:
+    resolution: {integrity: sha512-Q9cD79JGpPNQBxbi1fV+OAsTxYKLpx22sagsxSyKbu1u+t6UarApf5m32uVc8a5QAP1Wk7fIPN0aJFGGEE9DyQ==}
+    engines: {node: '>=10'}
+    dev: false
+
   /node@20.2.0:
     resolution: {integrity: sha512-oF1+u42FT/nFtRFdcsUNdexVCWQKAHB7LtKHOk/9o0cQBq19leB/0awrB3ZdzHU/Pz9tC9RHwgd52PK9bON30A==}
     engines: {npm: '>=5.0.0'}
@@ -2239,7 +2243,6 @@ packages:
     transitivePeerDependencies:
       - debug
     dev: false
-
 
   /optionator@0.9.1:
     resolution: {integrity: sha512-74RlY5FCnhq4jRxVUPKDaRwrVNXMqsGsiW6AJw4XK8hmtm10wC0ypZBLw5IIp85NZMr91+qd1RvvENwg7jjRFw==}
@@ -2853,3 +2856,7 @@ packages:
 
   /zod@3.21.4:
     resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false

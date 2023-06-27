@@ -29,6 +29,7 @@
     "libphonenumber-js": "^1.10.36",
     "lodash": "^4.17.21",
     "node": "^20.2.0",
+    "node-tesseract-ocr": "^2.2.1",
     "openai": "^3.3.0",
     "zod": "^3.21.4",
     "zod-express-middleware": "^1.4.0"
