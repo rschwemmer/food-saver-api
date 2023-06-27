@@ -11,7 +11,7 @@
     "drizzle:push": "drizzle-kit push:mysql --driver mysql2 --schema src/db/schema/ --connectionString=$(cat .env.development | grep DATABASE_URL | awk -F '=' '{print $NF}' | tr -d '\"')",
     "drizzle:drop": "drizzle-kit drop",
     "drizzle:check": "drizzle-kit check:mysql",
-    "seed": "ts-node ./src/seeds/createSeeds.ts"
+    "seed": "env-cmd -f .env.development ts-node ./src/seeds/createSeeds.ts"
   },
   "keywords": [],
   "author": "",

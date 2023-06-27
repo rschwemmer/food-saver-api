@@ -1,11 +1,21 @@
-import * as drizzle from "drizzle-orm"
-import { db } from "db/db"
-
 import categoriesData from "./categories"
-import { categories } from "@/db/schema/foodCategories"
+import { categories } from "../db/schema/foodCategories"
+import { drizzle } from "drizzle-orm/mysql2"
+import mysql from "mysql2/promise"
 
 async function seedDatabase(): Promise<void> {
   try {
+    console.log(process.env.DATABASE_URL)
+    const poolConnection = mysql.createPool({
+      host: String(process.env.DB_HOST),
+      user: String(process.env.DB_USER),
+      database: String(process.env.DB_NAME),
+      password: String(process.env.DB_PASS),
+      port: Number(process.env.DB_PORT),
+    })
+
+    const db = drizzle(poolConnection)
+
     await db.insert(categories).values(categoriesData)
 
     console.log("Database seeding completed successfully.")
