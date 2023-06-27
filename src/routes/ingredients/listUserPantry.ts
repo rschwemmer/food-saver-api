@@ -2,7 +2,6 @@ import { Request, Response } from "express"
 import { db } from "@/db/db"
 import { eq } from "drizzle-orm"
 import { pantry } from "@/db/schema/pantry"
-import talkToTheBot from "./utils/talkToTheBot"
 
 const listPantry = async (req: Request, res: Response) => {
   try {
@@ -12,7 +11,6 @@ const listPantry = async (req: Request, res: Response) => {
       .from(pantry)
       .where(eq(pantry.userId, Number(user_id)))
 
-    await talkToTheBot()
     return res
       .status(200)
       .json({ message: "ingredients in pantry", data: ingredientsList })

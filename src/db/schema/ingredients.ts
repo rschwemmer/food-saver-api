@@ -6,7 +6,7 @@ import {
   timestamp,
   int,
 } from "drizzle-orm/mysql-core"
-import { relations } from "drizzle-orm"
+import { relations, InferModel } from "drizzle-orm"
 
 import { users } from "./users"
 
@@ -25,3 +25,5 @@ export const ingredientsRelations = relations(ingredients, ({ one }) => ({
     references: [users.id],
   }),
 }))
+
+export type NewIngredient = InferModel<typeof ingredients, "insert">
