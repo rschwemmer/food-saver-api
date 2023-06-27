@@ -6,6 +6,7 @@ import express from "express"
 
 import appRouter from "./routes/router"
 import { createClerkClient } from "@clerk/clerk-sdk-node"
+import { OpenAIApi, Configuration } from "openai"
 
 import setupMiddleware from "./middleware/setupMiddleware"
 
@@ -19,10 +20,18 @@ app.use(
     credentials: true,
   })
 )
+// setup clerk
 const clerk = createClerkClient({ apiKey: process.env.CLERK_API_KEY })
 app.use(clerk.expressWithAuth({}))
 
+
 setupMiddleware(app)
+
+// setup chatgpt
+const configuration = new Configuration({
+  apiKey: process.env.OPENAI_API_KEY,
+})
+export const openai = new OpenAIApi(configuration)
 
 app.get("/", (req, res) => {
   res.status(200).json({ message: "API base url" })
