@@ -24,6 +24,7 @@ app.use(
 const clerk = createClerkClient({ apiKey: process.env.CLERK_API_KEY })
 app.use(clerk.expressWithAuth({}))
 
+app.use(express.urlencoded({ extended: true }))
 
 setupMiddleware(app)
 

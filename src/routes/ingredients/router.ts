@@ -2,6 +2,7 @@ import express, { Router } from "express"
 import listPantry from "./listUserPantry"
 import createMOFOPantry from "./createUserIngredients"
 import talkToTheBot from "./utils/talkToTheBot"
+import readImage from "./readImage"
 
 const ingredientRouter: Router = express.Router()
 
@@ -13,6 +14,7 @@ ingredientRouter.get("/:user_id", listPantry)
 // POST
 ingredientRouter.post("/", createMOFOPantry)
 ingredientRouter.post("/ingredient/:user_id", talkToTheBot)
+ingredientRouter.post("/receipt", readImage)
 
 // DELETE
 
